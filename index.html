@@ -5,12 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ピエロの紹介</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .neon {
+      color: #ff4fa1;
+      text-shadow:
+        0 0 8px #ff4fa1,
+        0 0 16px #ffb347,
+        0 0 24px #fff,
+        0 0 32px #ff4fa1;
+      animation: flicker 2.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      45% { opacity: 0.8; }
+      50% { opacity: 0.6; }
+      55% { opacity: 0.9; }
+      60% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+    .confetti {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+    .rainbow-bar {
+      width: 100%;
+      height: 10px;
+      background: repeating-linear-gradient(90deg, #ff4fa1 0 20px, #ffb347 20px 40px, #fff 40px 60px, #2d1e2f 60px 80px);
+      margin-bottom: 32px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px #ff4fa1aa;
+    }
+    .gallery-btn {
+      font-size: 1.3em;
+      letter-spacing: 0.1em;
+      margin-top: 32px;
+    }
+  </style>
 </head>
 <body>
+  <canvas class="confetti"></canvas>
   <div class="container">
-    <h1>ピエロの紹介</h1>
+    <div class="rainbow-bar"></div>
+    <h1 class="neon">ピエロの紹介</h1>
     <p class="lead">レトロでダークポップなピエロの世界へようこそ。</p>
     <a href="gallery.html" class="gallery-btn">ギャラリーを見る</a>
   </div>
+  <script>
+    // 簡易的な紙吹雪アニメーション
+    const canvas = document.querySelector('.confetti');
+    const ctx = canvas.getContext('2d');
+    let W = window.innerWidth, H = window.innerHeight;
+    canvas.width = W; canvas.height = H;
+    let confetti = Array.from({length: 60}, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 8 + 4,
+      d: Math.random() * 40 + 10,
+      color: `hsl(${Math.random()*360},90%,70%)`,
+      tilt: Math.random() * 10 - 5
+    }));
+    function drawConfetti() {
+      ctx.clearRect(0,0,W,H);
+      confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.ellipse(c.x, c.y, c.r, c.r/2, c.tilt, 0, 2*Math.PI);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+      });
+      updateConfetti();
+      requestAnimationFrame(drawConfetti);
+    }
+    function updateConfetti() {
+      confetti.forEach(c => {
+        c.y += Math.cos(c.d) + 1 + c.r/4;
+        c.x += Math.sin(c.d);
+        if(c.y > H) { c.y = -10; c.x = Math.random()*W; }
+      });
+    }
+    drawConfetti();
+    window.addEventListener('resize', () => {
+      W = window.innerWidth; H = window.innerHeight;
+      canvas.width = W; canvas.height = H;
+    });
+  </script>
 </body>
 </html> 
