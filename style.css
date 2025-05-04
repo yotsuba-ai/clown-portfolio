@@ -1,0 +1,48 @@
+body {
+  font-family: 'Yuji Boku', 'Yu Gothic', 'Meiryo', serif;
+  background: linear-gradient(135deg, #2d1e2f 0%, #3a2a3f 100%);
+  color: #ffe6f7;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  margin: 60px auto;
+  max-width: 520px;
+  background: rgba(40, 20, 50, 0.92);
+  border-radius: 18px;
+  padding: 40px 32px 48px 32px;
+  box-shadow: 0 8px 32px #000a, 0 0 0 8px #ff4fa1 inset;
+  border: 2px solid #ff4fa1;
+}
+h1 {
+  font-family: 'Yuji Boku', 'Yu Gothic', serif;
+  font-size: 2.5em;
+  margin-bottom: 18px;
+  color: #ff4fa1;
+  text-shadow: 2px 2px 8px #000a;
+}
+.lead {
+  font-size: 1.2em;
+  margin-bottom: 32px;
+  color: #ffe6f7;
+  letter-spacing: 0.05em;
+}
+.gallery-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4fa1 0%, #ffb347 100%);
+  color: #2d1e2f;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 16px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px #0006;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: 2px solid #fff2;
+}
+.gallery-btn:hover {
+  background: linear-gradient(90deg, #ffb347 0%, #ff4fa1 100%);
+  color: #fff;
+  transform: scale(1.06);
+} 

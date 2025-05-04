@@ -47,9 +47,24 @@
       letter-spacing: 0.1em;
       margin-top: 32px;
     }
+    .bg-gif {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .container, .confetti {
+      position: relative;
+      z-index: 2;
+    }
   </style>
 </head>
 <body>
+  <img src="clown-bg.gif" alt="背景動画" class="bg-gif">
   <canvas class="confetti"></canvas>
   <div class="container">
     <div class="rainbow-bar"></div>
