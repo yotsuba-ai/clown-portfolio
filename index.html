@@ -48,18 +48,7 @@
       margin-top: 32px;
     }
     .bg-gif {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 480px;
-      height: 320px;
-      object-fit: contain;
-      z-index: 0;
-      opacity: 0.55;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 40px #000a;
-      border-radius: 18px;
+      /* このクラスは不要なので削除してOK */
     }
     .container, .confetti {
       position: relative;
@@ -78,7 +67,6 @@
   </style>
 </head>
 <body>
-  <img src="clown-bg.gif" alt="背景動画" class="bg-gif">
   <canvas class="confetti"></canvas>
   <div class="container">
     <div class="rainbow-bar"></div>
