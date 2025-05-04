@@ -25,10 +25,7 @@
       100% { opacity: 1; }
     }
     .confetti {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      pointer-events: none;
-      z-index: 1;
+      /* 紙吹雪アニメーションは不要なので削除 */
     }
     .container {
       position: relative;
@@ -69,7 +66,6 @@
   </style>
 </head>
 <body>
-  <canvas class="confetti"></canvas>
   <div class="container">
     <div class="rainbow-bar"></div>
     <h1 class="neon">ピエロの紹介</h1>
@@ -78,42 +74,7 @@
     <a href="gallery.html" class="gallery-btn">ギャラリーを見る</a>
   </div>
   <script>
-    // 簡易的な紙吹雪アニメーション
-    const canvas = document.querySelector('.confetti');
-    const ctx = canvas.getContext('2d');
-    let W = window.innerWidth, H = window.innerHeight;
-    canvas.width = W; canvas.height = H;
-    let confetti = Array.from({length: 60}, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 8 + 4,
-      d: Math.random() * 40 + 10,
-      color: `hsl(${Math.random()*360},90%,70%)`,
-      tilt: Math.random() * 10 - 5
-    }));
-    function drawConfetti() {
-      ctx.clearRect(0,0,W,H);
-      confetti.forEach(c => {
-        ctx.beginPath();
-        ctx.ellipse(c.x, c.y, c.r, c.r/2, c.tilt, 0, 2*Math.PI);
-        ctx.fillStyle = c.color;
-        ctx.fill();
-      });
-      updateConfetti();
-      requestAnimationFrame(drawConfetti);
-    }
-    function updateConfetti() {
-      confetti.forEach(c => {
-        c.y += Math.cos(c.d) + 1 + c.r/4;
-        c.x += Math.sin(c.d);
-        if(c.y > H) { c.y = -10; c.x = Math.random()*W; }
-      });
-    }
-    drawConfetti();
-    window.addEventListener('resize', () => {
-      W = window.innerWidth; H = window.innerHeight;
-      canvas.width = W; canvas.height = H;
-    });
+    // 紙吹雪アニメーションのスクリプトは不要なので削除
   </script>
 </body>
 </html> 
