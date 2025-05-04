@@ -49,13 +49,17 @@
     }
     .bg-gif {
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+      top: 50%;
+      left: 50%;
+      width: 480px;
+      height: 320px;
+      object-fit: contain;
       z-index: 0;
       opacity: 0.55;
       pointer-events: none;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 40px #000a;
+      border-radius: 18px;
     }
     .container, .confetti {
       position: relative;
