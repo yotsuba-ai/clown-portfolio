@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ギャラリー | ピエロの紹介</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin-top: 36px;
+    }
+    .gallery-item {
+      background: #2d1e2f;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0007;
+      overflow: hidden;
+      width: 220px;
+      transition: transform 0.2s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px #ff4fa1aa;
+    }
+    .gallery-thumb {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      background: #444;
+    }
+    .gallery-caption {
+      color: #ffb347;
+      font-size: 1em;
+      padding: 10px 0 12px 0;
+      font-family: 'Yuji Boku', 'Yu Gothic', serif;
+      background: #2d1e2f;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 24px;
+      color: #ff4fa1;
+      text-decoration: underline;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ギャラリー</h1>
+    <div class="gallery-grid">
+      <!-- 画像サムネイル例 -->
+      <div class="gallery-item">
+        <a href="images/clown1.jpg" target="_blank">
+          <img src="images/clown1.jpg" alt="ピエロ1" class="gallery-thumb">
+        </a>
+        <div class="gallery-caption">ピエロ1</div>
+      </div>
+      <div class="gallery-item">
+        <a href="images/clown2.jpg" target="_blank">
+          <img src="images/clown2.jpg" alt="ピエロ2" class="gallery-thumb">
+        </a>
+        <div class="gallery-caption">ピエロ2</div>
+      </div>
+      <!-- 動画サムネイル例（YouTube埋め込み） -->
+      <div class="gallery-item">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="ピエロ動画" class="gallery-thumb">
+        </a>
+        <div class="gallery-caption">ピエロ動画</div>
+      </div>
+      <div class="gallery-item">
+        <a href="images/clown_anime.jpg" target="_blank">
+          <img src="images/clown_anime.jpg" alt="ピエロアニメ風" class="gallery-thumb">
+        </a>
+        <div class="gallery-caption">ピエロ（アニメ風）</div>
+      </div>
+      <div class="gallery-item">
+        <a href="images/clown_real.jpg" target="_blank">
+          <img src="images/clown_real.jpg" alt="ピエロリアル" class="gallery-thumb">
+        </a>
+        <div class="gallery-caption">ピエロ（リアル）</div>
+      </div>
+      <div class="gallery-item">
+        <a href="images/clown_watercolor.jpg" target="_blank">
+          <img src="images/clown_watercolor.jpg" alt="ピエロ水彩" class="gallery-thumb">
+        </a>
+        <div class="gallery-caption">ピエロ（水彩）</div>
+      </div>
+      <!-- GIFアニメーション -->
+      <div class="gallery-item">
+        <a href="images/clown-anime.gif" target="_blank">
+          <img src="images/clown-anime.gif" alt="ピエロGIFアニメ" class="gallery-thumb">
+        </a>
+        <div class="gallery-caption">ピエロGIFアニメ</div>
+      </div>
+    </div>
+    <a href="index.html" class="back-btn">← トップへ戻る</a>
+  </div>
+</body>
+</html> 
